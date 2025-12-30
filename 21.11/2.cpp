@@ -1,20 +1,19 @@
-
 #include <iostream>
 using namespace std;
 
-int Nod(int a, int b) {
-    if (b == 0) {
-        return a;
-    }
-    else {
-        return Nod(b, a % b);
-    }
+double number(double value, int n){
+    double k = 1;
+    for (int i = 0; i < n; i++)
+        k *= 10;
+    double result = (value * k + 0.5) / k;
+    return result;
 }
 
-int main() {
-    setlocale(LC_ALL, "ru");
-
-    cout << Nod(1, 7);
+int main(){
+    double x = 3.1415926;
+    cout << number(x, 2) << endl; 
+    cout << number(x, 4) << endl;  
+    cout << number(5.6789, 1) << endl; 
 
     return 0;
 }
